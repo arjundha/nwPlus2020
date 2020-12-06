@@ -1,6 +1,7 @@
 //list of timeslots
 let data = [
-    {
+
+        /*
         id: "",
         name: "",
         day: "",
@@ -10,20 +11,23 @@ let data = [
         type: "",
         color: "",
         active: true
-    }
+        */
+    
 ]
 
 const sunlightStart = 5;
 const sunlightDuration = 8;
 
-function loadObjects() {
-    let slots = document.getElementsByClassName("slot");
-    for (let i = 0; i < slots.length; i++) {
-        let id = slots[i].getElementsById.id;
-        data.push.makeSlot(i, "", id.str(0,3), 0, "", "", "", "", false)
-        slots[i].addEventListener("click", initbutton(i));
-    }
+let slots = document.getElementsByClassName("slot");
 
+function initObjects() {
+
+    for (let i = 0; i < slots.length; i++) {
+        let slotstr = slots[i].id;
+        data.push(makeSlot(i, "", slotstr.slice(0,3), slotstr.slice(3), 0, "", "", "", false));
+        //slots[i].addEventListener("click", initbutton(i));
+    }
+    render();
 
 
 }
@@ -51,7 +55,7 @@ function makeSlot(i, sname, sday, stime, sdur, sdesc, stype, scolor, sactive) {
         type: stype,
         color: scolor,
         active: sactive
-    }
+    };
 
 
 
@@ -75,27 +79,27 @@ function updateSlot(s) {
     typeValue = "";
     colorValue = "";
 
-    for (let i = 0; i < getDay.length, i++) {
+    for (let i = 0; i < getDay.length; i++) {
         if (getDay[i].checked) {
             dayValue = i + 1;
         }
     }
-    for (let i = 0; i < getHour.length, i++) {
+    for (let i = 0; i < getHour.length; i++) {
         if (getHour[i].checked) {
             hourValue = getHour[i].text;
         }
     }
-    for (let i = 0; i < getMin.length, i++) {
+    for (let i = 0; i < getMin.length; i++) {
         if (getMin[i].checked) {
             minValue = getMin[i].text;
         }
     }
-    for (let i = 0; i < getDuration.length, i++) {
+    for (let i = 0; i < getDuration.length; i++) {
         if (durValue[i].checked) {
             durValue = durValue[i].text;
         }
     }
-    for (let i = 0; i < getType.length, i++) {
+    for (let i = 0; i < getType.length; i++) {
         if (typeValue[i].checked) {
             typeValue = typeValue[i].text;
         }
@@ -149,9 +153,14 @@ function createSummary() {
 
 //Renders data into objects
 function render() {
+    data[10].name = "Gregor 101";
+    data[10].time = "0800";
+    data[10].active = true;
     for (let i = 0; i < data.length; i++) {
-        let object = document.getElementById('slot');
-        object.innerHTML = ''
+        if (data[i].active == true){
+            slots[i].innerText =  data[i].name + " " + data[i].time;
+
+        }
     }
 
 
@@ -165,13 +174,12 @@ function clearAll() {
         data[i] = {};
     }
     render();
-    loadObjects();
+    initObjects();
 }
 
 
 function init() {
-    loadObjects();
-    print(daySlot)
+    initObjects();
 
 
 
