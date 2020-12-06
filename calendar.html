@@ -14,22 +14,157 @@
   </head>
   <body> 
     <div id="navbar">
-    <nav class="navbar navbar-expand-lg container" id="navbar">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-          </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link" href="#">Features</a>
-            <a class="nav-item nav-link" href="#">Pricing</a>
-            <a class="nav-item nav-link disabled" href="#">Disabled</a>
+        <nav class="navbar navbar-expand-lg navbar-dark container id="navbar">
+            <div class="container">
+                <a class="navbar-brand" id="navTitle" href="index.html">You Got This!</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-item nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-item nav-link active" href="calendar.html">Your Week</a>
+                        <a class="nav-item nav-link" href="#">About Us</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div> 
+
+    <form class="container" onsubmit="return false">
+        <div class="form-group row">
+            <label for="name" class="col-sm-2 col-form-label">Name</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="name" placeholder="Name" name="Name" title="Enter the name of your event" required>
             </div>
         </div>
-    </nav>
-    </div> 
-    <div class="calendar">
+
+        <div class="form-group row">
+            <label for="day" class="col-sm-2 col-form-label">Day:</label>
+            <div class="col-sm-10">
+                <select id="day" name="day">
+                    <option value="sun">Sunday</option>
+                    <option value="mon">Monday</option>
+                    <option value="tue">Tuesday</option>
+                    <option value="wed">Wednesday</option>
+                    <option value="thu">Thursday</option>
+                    <option value="fri">Friday</option>
+                    <option value="sat">Saturday</option>
+                </select>
+            </div>
+        </div>
+    
+        <div class="form-group row">
+            <label for="start" class="col-sm-2 col-form-label">Start:</label>
+            <div class="col-sm-10">
+                <select id="start" name="start" required>
+                    <option value="0800">08:00</option>
+                    <option value="0815">08:15</option>
+                    <option value="0830">08:30</option>
+                    <option value="0845">08:45</option>
+                    <option value="0900">09:00</option>
+                    <option value="0915">09:15</option>
+                    <option value="0930">09:30</option>
+                    <option value="0945">09:45</option>
+                    <option value="1000">10:00</option>
+                    <option value="1015">10:15</option>
+                    <option value="1030">10:30</option>
+                    <option value="1045">10:45</option>
+                    <option value="1100">11:00</option>
+                    <option value="1115">11:15</option>
+                    <option value="1130">11:30</option>
+                    <option value="1145">11:45</option>
+                    <option value="1200">12:00</option>
+                    <option value="1215">12:15</option>
+                    <option value="1230">12:30</option>
+                    <option value="1245">12:45</option>
+                    <option value="1300">13:00</option>
+                    <option value="1315">13:15</option>
+                    <option value="1330">13:30</option>
+                    <option value="1345">13:45</option>
+                    <option value="1400">14:00</option>
+                    <option value="1415">14:15</option>
+                    <option value="1430">14:30</option>
+                    <option value="1445">14:45</option>
+                    <option value="1500">15:00</option>
+                    <option value="1515">15:15</option>
+                    <option value="1530">15:30</option>
+                    <option value="1545">15:45</option>
+                    <option value="1600">16:00</option>
+                    <option value="1615">16:15</option>
+                    <option value="1630">16:30</option>
+                    <option value="1645">16:45</option>
+                    <option value="1700">17:00</option>
+                    <option value="1715">17:15</option>
+                    <option value="1730">17:30</option>
+                    <option value="1745">17:45</option>
+                    <option value="1800">18:00</option>
+                    <option value="1815">18:15</option>
+                    <option value="1830">18:30</option>
+                    <option value="1845">18:45</option>
+                    <option value="1900">19:00</option>
+                    <option value="1915">19:15</option>
+                    <option value="1930">19:30</option>
+                    <option value="1945">19:45</option>
+                    <option value="2000">20:00</option>
+                    <option value="2015">20:15</option>
+                    <option value="2030">20:30</option>
+                    <option value="2045">20:45</option>
+                    <option value="2100">21:00</option>
+                    <option value="2115">21:15</option>
+                    <option value="2130">21:30</option>
+                    <option value="2145">21:45</option>
+                </select>
+            </div>
+        </div>
+    
+        <!-- Enter phone number??? -->
+        <div class="form-group row">
+            <label for="duration" class="col-sm-2 col-form-label">Duration:</label>
+            <div class="col-sm-10">
+                <select id="duration" name="duration" required>
+                    <option value="100">15 Minutes</option>
+                    <option value="200">30 Minutes</option>
+                    <option value="320">45 Minutes</option>
+                    <option value="440">1 Hour</option>
+                    <option value="550">1 Hour 15 Minutes</option>
+                    <option value="660">1 Hour 30 Minutes</option>
+                    <option value="770">1 Hour 45 Minutes</option>
+                    <option value="880">2 Hours</option>
+                    <option value="990">2 Hours 15 Minutes</option>
+                    <option value="1100">2 Hours 30 Minutes</option>
+                    <option value="1210">2 Hours 45 Minutes</option>
+                    <option value="1320">3 Hours</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Customer Name -->
+
+        <div class="form-group row">
+            <label for="desc" class="col-sm-2 col-form-label">Description:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="desc" placeholder="Describe your event" name="desc">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="type" class="col-sm-2 col-form-label">Type:</label>
+            <select id="type" name="type" required>
+                <option value="class">Class</option>
+                <option value="exercise">Exercise</option>
+                <option value="relax">Relax</option>
+            </select>
+        </div>
+
+        <div>
+            <button id="submitBtn" type="submit" class="btn btn-dark float-right" onclick="logSlot()">Submit</button>
+            <small id="error_msg" class="form-text text-danger"></small>
+        </div>
+        <br>
+    </form>
+
+    <div class="calendar container" >
   
         <header class="container">
             <div class="calendar__title" style="display: flex; justify-content: center; align-items: center">
@@ -48,11 +183,11 @@
           <tr>
             <th class="headcol"></th>
             <th class="secondary">Sun</th>
-            <th>Mon</th>
-            <th>Tue</th>
+            <th class="secondary">Mon</th>
+            <th class="secondary">Tue</th>
             <th class="today">Wed</th>
-            <th>Thu</th>
-            <th>Fri</th>
+            <th class="secondary">Thu</th>
+            <th class="secondary">Fri</th>
             <th class="secondary">Sat</th>
 
           </tr>
@@ -65,7 +200,7 @@
       <!-- now: adds a red line above the td -->
         <tbody>
           <tr>
-            <td class="headcol"></td>
+            <td class="headcol" style="background: linear-gradient(0deg, #e0d3cdff 70%, white 50%)"></td>
             <td class="sun"></td>
             <td class="mon"></td>
             <td class="tue past"></td>
@@ -234,12 +369,11 @@
             <td id="fri1145"></td>
             <td id="sat1145"></td>
           </tr>
-
           <tr>
             <td class="headcol">12:00</td>
             <td id="sun1200"></td>
             <td id="mon1200"></td>
-            <td id="tue1200"><div class="event triple"><input id="check" type="checkbox" class="checkbox" /><label for="check"></label>10:00–11:00 Meeting</div></td>
+            <td id="tue1200"><div class="event oct"><input id="check" type="checkbox" class="checkbox" /><label for="check"></label>10:00–11:00 Meeting</div></td>
             <td id="wed1200"></td>
             <td id="thu1200"></td>
             <td id="fri1200"></td>
@@ -640,7 +774,7 @@
       </div>
       </div>
       
-
+      <script src="schedule.js"></script>
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>

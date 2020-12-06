@@ -1,3 +1,70 @@
+/* 
+#eae2b7
+#fcbf49
+#f77f00
+#d62828
+#003049
+*/
+/* CSS HEX */
+/* --brink-pink: #f55c7aff;
+--candy-pink: #f56c77ff;
+--congo-pink: #f57c73ff;
+--middle-red: #f68c70ff;
+--atomic-tangerine: #f69c6dff;
+--rajah: #f6ac69ff;
+--sunray: #f6bc66ff; */
+
+/* CSS HEX */
+/* --dark-lava: #4c3d36ff;
+--silver-pink: #bda799ff;
+--silver-pink-2: #d6b8aeff;
+--champagne-pink: #e0d3cdff;
+--linen: #f9efe6ff; */
+
 #navbar {
-    background-color: #003049
+    background-color: #4c3d36ff
+}
+#navTitle {
+    color: #bda799ff;
+}
+
+.nav-item {
+    color: #e0d3cdff
+}
+
+body {
+    background-color: #f9efe6ff;
+}
+
+.active1 {
+    color: #d6b8aeff;
+}
+
+.cpic {
+    width: 100%;
+}
+
+.carousel-inner{
+    width:100%;
+    max-height: 300px ;
+}
+
+.darklava {
+    color: #4c3d36ff
+}
+
+.silverpink1 {
+    color: #bda799ff
+}
+
+.silverpink2 {
+    color: #d6b8aeff
+}
+
+.champagne {
+    color: #e0d3cdff
+}
+
+.linen {
+    color: #f9efe6ff
 }

@@ -63,6 +63,21 @@ function makeSlot(i, sname, sday, stime, sdur, sdesc, stype, scolor, sactive) {
 
 
 }
+function logSlot() {
+    let getName = document.getElementById("name").value;
+    let getDay = document.getElementById("day").value;
+    let getTime = document.getElementById("start").value;
+    let getDuration = document.getElementById("duration").value;
+    let getDesc = document.getElementById("desc").value;
+    let getType = document.getElementById("type").value;
+
+    console.log(getName)
+    console.log(getDay)
+    console.log(getTime)
+    console.log(getDuration)
+    console.log(getDesc)
+    console.log(getType)
+
 
 function updateSlot(i, uName, uDay, uTime, uDuration, uDesc, uType) {
     let fName = document.getElementById("");
@@ -135,7 +150,62 @@ function updateSlot(i, uName, uDay, uTime, uDuration, uDesc, uType) {
     data[id] = makeSlot(id, nameValue, dayValue, timeValue, durValue, typeValue, colorValue, true);
     render();
 
+
 }
+
+// function updateSlot(s) {
+//     let getName = document.getElementById("");
+//     let getDay = document.getElementById("");
+//     let getTime = document.getElementById("");
+//     let getDuration = document.getElementById("");
+//     let getDesc = document.getElementById("");
+//     let getType = document.getElementById("");
+//     //let id = //Get id
+
+//     nameValue = "";
+//     dayValue = "";
+//     timeValue = 0;
+//     durValue = 0;
+//     descValue = getDesc.innerText;
+//     typeValue = "";
+//     colorValue = "";
+
+//     for (let i = 0; i < getDay.length, i++) {
+//         if (getDay[i].checked) {
+//             dayValue = i + 1;
+//         }
+//     }
+//     for (let i = 0; i < getHour.length, i++) {
+//         if (getHour[i].checked) {
+//             hourValue = getHour[i].text;
+//         }
+//     }
+//     for (let i = 0; i < getMin.length, i++) {
+//         if (getMin[i].checked) {
+//             minValue = getMin[i].text;
+//         }
+//     }
+//     for (let i = 0; i < getDuration.length, i++) {
+//         if (durValue[i].checked) {
+//             durValue = durValue[i].text;
+//         }
+//     }
+//     for (let i = 0; i < getType.length, i++) {
+//         if (typeValue[i].checked) {
+//             typeValue = typeValue[i].text;
+//         }
+//     }
+
+
+//     if (getType == 1) { colorValue = "FFFFFF"; }
+//     else if (getType == 2) { colorValue = "FFFFFF"; }
+//     else if (getType == 3) { colorValue = "FFFFFF"; }
+//     else if (getType == 4) { colorValue = "FFFFFF"; }
+
+//     data[id] = makeSlot(id, nameValue, dayValue, hourValue, minValue, durValue, typeValue, colorValue, true);
+//     render();
+//     //}
+// }
 
 
 
@@ -283,8 +353,13 @@ function clearAll() {
 function init() {
     initObjects();
 
+// function init() {
+//     loadObjects();
+//     print(daySlot)
 
 
-}
 
-init()
+
+// }
+
+// init()
