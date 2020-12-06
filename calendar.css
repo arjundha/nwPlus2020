@@ -2,7 +2,7 @@
     background-color: red
 }
   
-  .outer {
+  /* .outer {
     position:relative;
   }
   
@@ -10,9 +10,9 @@
       margin: 0 auto;
     max-width: 1280px;
     min-width: 500px;
-    border: black solid;
+    
     border-radius: 8px;
-  }
+  } */
 
   
   thead {
@@ -27,7 +27,7 @@
   }
   
   header {
-    background: #fff;
+    background: #f9efe6ff;
     padding: 1rem;
     color: rgba(0, 0, 0, 0.7);
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -50,7 +50,7 @@
     top: 100px;
   }
   table {
-    background: #fff;
+    background: #e0d3cdff;
     width: 100%;
     height: 100%;
     border-collapse: collapse;
@@ -164,15 +164,32 @@
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
     background: #00B4FC;
   }
-  
+  .event.single {
+    height: 100%;
+  }
   .event.double {
     height: 200%;
   }
   .event.triple {
-    height: 300%;
+    height: 320%;
   }
   .event.quad {
-    height: 400%;
+    height: 440%;
+  }
+  .event.quint {
+    height: 550%;
+  }
+
+  .event.hex {
+    height: 660%;
+  }
+
+  .event.sept {
+    height: 770%;
+  }
+
+  .event.oct {
+    height: 880%;
   }
   /**
   thead {
@@ -200,7 +217,7 @@
     position: absolute;
   }
   
-  button.secondary {
+  /* button.secondary {
     border: 1px solid rgba(0, 0, 0, 0.1);
     background: white;
     padding: 0.5rem 0.75rem;
@@ -220,7 +237,7 @@
   }
   button.secondary:focus {
     outline: 0;
-  }
+  } */
   
   /* tr td:nth-child(2), tr td:nth-child(3), .past {
     background: #fafafa;
