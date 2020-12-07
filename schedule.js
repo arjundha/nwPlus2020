@@ -278,19 +278,20 @@ function render() {
         if (data[i].active == true) {
             slots[i].innerHTML = '<div class="event"><input id="check" type="checkbox" class="checkbox" /><label for="check"></label>' +
                 '<h5>' + data[i].name + '</h5>' + '<h6>' + data[i].time + '</h6>' + data[i].desc + '</div>';
-            if (data[i].duration == 100) { slots[i].classList.add(""); }
-            else if (data[i].duration == 200) { slots[i].firstChild.classList.add("single"); }
-            else if (data[i].duration == 320) { slots[i].firstChild.classList.add("double"); }
-            else if (data[i].duration == 440) { slots[i].firstChild.classList.add("triple"); }
-            else if (data[i].duration == 550) { slots[i].firstChild.classList.add("quad"); }
-            else if (data[i].duration == 660) { slots[i].firstChild.classList.add("quint"); }
-            else if (data[i].duration == 770) { slots[i].firstChild.classList.add("hex"); }
+            if (data[i].duration == 100) { slots[i].classList.add("single"); }
+            else if (data[i].duration == 200) { slots[i].firstChild.classList.add("double"); }
+            else if (data[i].duration == 320) { slots[i].firstChild.classList.add("triple"); }
+            else if (data[i].duration == 440) { slots[i].firstChild.classList.add("quad"); }
+            else if (data[i].duration == 550) { slots[i].firstChild.classList.add("quint"); }
+            else if (data[i].duration == 660) { slots[i].firstChild.classList.add("hex"); }
+            else if (data[i].duration == 770) { slots[i].firstChild.classList.add("sept"); }
             else if (data[i].duration == 880) { slots[i].firstChild.classList.add("oct"); }
+            console.log(data[i].type)
 
-            if (data[i].type = "class") { slots[i].classList.add("classColour") }
-            else if (data[i].type = "exercise") { slots[i].classList.add("exerciseColour") }
-            else if (data[i].type = "leisure") { slots[i].classList.add("leisureColour") }
-            else if (data[i].type = "study") { slots[i].classList.add("studyColour") }
+            if (data[i].type = "class") { slots[i].firstChild.classList.add("classColour") }
+            else if (data[i].type = "exercise") { slots[i].firstChild.classList.add("exerciseColour") }
+            else if (data[i].type = "leisure") { slots[i].firstChild.classList.add("leisureColour") }
+            else if (data[i].type = "study") { slots[i].firstChild.classList.add("studyColour") }
         }
     }
     createSummary();

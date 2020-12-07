@@ -69,6 +69,20 @@ body {
     color: #f9efe6ff
 }
 
-footer {
+.footer {
     background-color: #bda799ff
+}
+
+.timebutton {
+    background: #4c3d36ff;
+    color: #f9efe6ff;
+
+}
+
+
+.theform {
+    background: #d6b8aeff;
+    color: #4c3d36ff;
+    border-radius: 10pt;
+
 }
