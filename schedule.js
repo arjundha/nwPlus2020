@@ -1,19 +1,16 @@
-//list of timeslots
-let data = [
+let data = []
 
-    /*
-    id: "",
-    name: "",
-    day: "",
-    time: 0,
-    duration: 0, //in minutes    
-    desc: "",  //some text
-    type: "",
-    color: "",
-    active: true
-    */
-
-]
+/*
+id: "",
+name: "",
+day: "",
+time: 0,
+duration: 0, //in minutes    
+desc: "",  //some text
+type: "",
+color: "",
+active: true
+*/
 
 const sunlightStart = 5;
 const sunlightDuration = 8;
@@ -21,7 +18,6 @@ const sunlightDuration = 8;
 let slots = document.getElementsByClassName("slot");
 
 function initObjects() {
-
     for (let i = 0; i < slots.length; i++) {
         let slotstr = slots[i].id;
         data.push(makeSlot(i, "", slotstr.slice(0, 3), slotstr.slice(3), 0, "", "", "", false));
@@ -37,12 +33,7 @@ function initObjects() {
 
         });
     }
-
-
-
     render();
-
-
 }
 
 
@@ -58,52 +49,27 @@ function makeSlot(i, sname, sday, stime, sdur, sdesc, stype, scolor, sactive) {
         color: scolor,
         active: sactive
     };
+}
 
-
+function updateSlot(i, uName, uDay, uTime, uDuration, uDesc, uType) {
+    let fName = document.getElementById("name");
+    let fDay = document.getElementById("day");
+    let fTime = document.getElementById("start");
+    let fDuration = document.getElementById("duration");
+    let fDesc = document.getElementById("desc");
+    let fType = document.getElementById("type");
+    //let id = //Get id
+    fName.value = uName;
+    fDay.value = uDay;
+    fTime.value = uTime;
+    fDuration.value = uDuration;
+    fDesc.value = uDesc;
+    fType.value = uType;
 
 
 }
-function logSlot() {
-    let getName = document.getElementById("name").value;
-    let getDay = document.getElementById("day").value;
-    let getTime = document.getElementById("start").value;
-    let getDuration = document.getElementById("duration").value;
-    let getDesc = document.getElementById("desc").value;
-    let getType = document.getElementById("type").value;
 
-    console.log(getName)
-    console.log(getDay)
-    console.log(getTime)
-    console.log(getDuration)
-    console.log(getDesc)
-    console.log(getType)
-
-
-function updateSlot(i, uName, uDay, uTime, uDuration, uDesc, uType) {
-    let fName = document.getElementById("");
-    let fDay = document.getElementById("");
-    let fTime = document.getElementById("");
-    let fDuration = document.getElementById("");
-    let fDesc = document.getElementById("");
-    let fType = document.getElementById("");
-    //let id = //Get id
-    fName = uName;
-    fDay = uDay;
-    fTime = uTime;
-    fDuration = uDuration;
-    fDesc = uDesc;
-    fType = uType;
-
-    submitButton = document.getElementById("")
-    submitButton.addEventListener("click", function () {
-        data[i].name = uName;
-        data[i].day = uDay;
-        data[i].time = uTime;
-        data[i].duration = uDuration;
-        data[i].desc = uDesc;
-        data[i].type = uType;
-        render();
-    })
+/*
 
     getName = "gregor 101";
     getDay = "mon";
@@ -149,65 +115,45 @@ function updateSlot(i, uName, uDay, uTime, uDuration, uDesc, uType) {
 
     data[id] = makeSlot(id, nameValue, dayValue, timeValue, durValue, typeValue, colorValue, true);
     render();
+*/
+
+function updateButton() {
+    let getName = document.getElementById("name").value;
+    let getDay = document.getElementById("day").value;
+    let getTime = document.getElementById("start").value;
+    let getDuration = document.getElementById("duration").value;
+    let getDesc = document.getElementById("desc").value;
+    let getType = document.getElementById("type").value;
+
+    console.log(getName)
+    console.log(getDay)
+    console.log(getTime)
+    console.log(getDuration)
+    console.log(getDesc)
+    console.log(getType)
+
+    for (let i = 0; i < data.length; i++) {
+        if (data[i].day == getDay && data[i].time == getTime) {
+            data[i].name = getName;
+            data[i].duration = getDuration;
+            data[i].desc = getDesc;
+            data[i].type = getType;
+            data[i].active = true;
+
+        }
 
 
+    }
+    render();
+    /*
+        data[i].name = uName;
+        data[i].day = uDay;
+        data[i].time = uTime;
+        data[i].duration = uDuration;
+        data[i].desc = uDesc;
+        data[i].type = uType;
+        render();*/
 }
-
-// function updateSlot(s) {
-//     let getName = document.getElementById("");
-//     let getDay = document.getElementById("");
-//     let getTime = document.getElementById("");
-//     let getDuration = document.getElementById("");
-//     let getDesc = document.getElementById("");
-//     let getType = document.getElementById("");
-//     //let id = //Get id
-
-//     nameValue = "";
-//     dayValue = "";
-//     timeValue = 0;
-//     durValue = 0;
-//     descValue = getDesc.innerText;
-//     typeValue = "";
-//     colorValue = "";
-
-//     for (let i = 0; i < getDay.length, i++) {
-//         if (getDay[i].checked) {
-//             dayValue = i + 1;
-//         }
-//     }
-//     for (let i = 0; i < getHour.length, i++) {
-//         if (getHour[i].checked) {
-//             hourValue = getHour[i].text;
-//         }
-//     }
-//     for (let i = 0; i < getMin.length, i++) {
-//         if (getMin[i].checked) {
-//             minValue = getMin[i].text;
-//         }
-//     }
-//     for (let i = 0; i < getDuration.length, i++) {
-//         if (durValue[i].checked) {
-//             durValue = durValue[i].text;
-//         }
-//     }
-//     for (let i = 0; i < getType.length, i++) {
-//         if (typeValue[i].checked) {
-//             typeValue = typeValue[i].text;
-//         }
-//     }
-
-
-//     if (getType == 1) { colorValue = "FFFFFF"; }
-//     else if (getType == 2) { colorValue = "FFFFFF"; }
-//     else if (getType == 3) { colorValue = "FFFFFF"; }
-//     else if (getType == 4) { colorValue = "FFFFFF"; }
-
-//     data[id] = makeSlot(id, nameValue, dayValue, hourValue, minValue, durValue, typeValue, colorValue, true);
-//     render();
-//     //}
-// }
-
-
 
 function switchTimezone(t) {
     for (let i = 0; i < data.length; i++) {
@@ -234,13 +180,13 @@ function createSummary() {
                 if (data[j].type == "Class") {
                     day[i].classTime = day[i].classTime + data[j].duration
                 }
-                else if (data[j].type == "Exercise"){
+                else if (data[j].type == "Exercise") {
                     day[i].exerciseTime = day[i].exerciseTime + data[j].duration
                 }
-                else if (data[j].type == "Leisure"){
+                else if (data[j].type == "Leisure") {
                     day[i].leisureTime = day[i].leisureTime + data[j].duration
                 }
-                else if (data[j].type == "Study"){
+                else if (data[j].type == "Study") {
                     day[i].studyTime = day[i].studyTime + data[j].duration
                 }
             }
@@ -248,13 +194,13 @@ function createSummary() {
                 if (data[j].type == "Class") {
                     day[i].classTime = day[i].classTime + data[j].duration
                 }
-                else if (data[j].type == "Exercise"){
+                else if (data[j].type == "Exercise") {
                     day[i].exerciseTime = day[i].exerciseTime + data[j].duration
                 }
-                else if (data[j].type == "Leisure"){
+                else if (data[j].type == "Leisure") {
                     day[i].leisureTime = day[i].leisureTime + data[j].duration
                 }
-                else if (data[j].type == "Study"){
+                else if (data[j].type == "Study") {
                     day[i].studyTime = day[i].studyTime + data[j].duration
                 }
             }
@@ -262,13 +208,13 @@ function createSummary() {
                 if (data[j].type == "Class") {
                     day[i].classTime = day[i].classTime + data[j].duration
                 }
-                else if (data[j].type == "Exercise"){
+                else if (data[j].type == "Exercise") {
                     day[i].exerciseTime = day[i].exerciseTime + data[j].duration
                 }
-                else if (data[j].type == "Leisure"){
+                else if (data[j].type == "Leisure") {
                     day[i].leisureTime = day[i].leisureTime + data[j].duration
                 }
-                else if (data[j].type == "Study"){
+                else if (data[j].type == "Study") {
                     day[i].studyTime = day[i].studyTime + data[j].duration
                 }
             }
@@ -276,13 +222,13 @@ function createSummary() {
                 if (data[j].type == "Class") {
                     day[i].classTime = day[i].classTime + data[j].duration
                 }
-                else if (data[j].type == "Exercise"){
+                else if (data[j].type == "Exercise") {
                     day[i].exerciseTime = day[i].exerciseTime + data[j].duration
                 }
-                else if (data[j].type == "Leisure"){
+                else if (data[j].type == "Leisure") {
                     day[i].leisureTime = day[i].leisureTime + data[j].duration
                 }
-                else if (data[j].type == "Study"){
+                else if (data[j].type == "Study") {
                     day[i].studyTime = day[i].studyTime + data[j].duration
                 }
             }
@@ -290,13 +236,13 @@ function createSummary() {
                 if (data[j].type == "Class") {
                     day[i].classTime = day[i].classTime + data[j].duration
                 }
-                else if (data[j].type == "Exercise"){
+                else if (data[j].type == "Exercise") {
                     day[i].exerciseTime = day[i].exerciseTime + data[j].duration
                 }
-                else if (data[j].type == "Leisure"){
+                else if (data[j].type == "Leisure") {
                     day[i].leisureTime = day[i].leisureTime + data[j].duration
                 }
-                else if (data[j].type == "Study"){
+                else if (data[j].type == "Study") {
                     day[i].studyTime = day[i].studyTime + data[j].duration
                 }
             }
@@ -324,14 +270,19 @@ function createSummary() {
 
 //Renders data into objects
 function render() {
-    data[10].name = "Gregor 101";
-    data[10].time = "0800";
-    data[10].active = true;
     for (let i = 0; i < data.length; i++) {
         if (data[i].active == true) {
-            slots[i].innerHTML = '<div class="event triple"><input id="check" type="checkbox" class="checkbox" /><label for="check"></label>' +
-                data[10].name + ' ' + data[10].time + '</div>'
-
+            slots[i].innerHTML = '<div class="event"><input id="check" type="checkbox" class="checkbox" /><label for="check"></label>' +
+                data[i].name + ' ' + data[i].time + ' ' + data[i].desc + '</div>';
+                console.log(data[i].duration);
+            if (data[i].duration == 100) { slots[i].classList.add(""); }
+            else if (data[i].duration == 200) { slots[i].classList.add("single"); }
+            else if (data[i].duration == 320) { slots[i].classList.add("double"); }
+            else if (data[i].duration == 440) { slots[i].classList.add("triple"); }
+            else if (data[i].duration == 550) { slots[i].classList.add("quad"); }
+            else if (data[i].duration == 660) { slots[i].classList.add("quint"); }
+            else if (data[i].duration == 770) { slots[i].classList.add("hex"); }
+            else if (data[i].duration == 880) { slots[i].classList.add("oct"); }
         }
     }
 
@@ -352,14 +303,6 @@ function clearAll() {
 
 function init() {
     initObjects();
+}
 
-// function init() {
-//     loadObjects();
-//     print(daySlot)
-
-
-
-
-// }
-
-// init()
+init();
