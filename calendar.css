@@ -1,6 +1,4 @@
-.sun {
-    background-color: red
-}
+
   
   /* .outer {
     position:relative;
@@ -61,15 +59,15 @@
   
   
   .headcol {
-    width: 60px;
+    width: 80px;
     font-size: 0.875rem;
     font-weight: 500;
     color: rgba(0, 0, 0, 0.5);
-    padding: 0.25rem 0;
+
     text-align: center;
     border: 0;
     position: relative;
-    top: -12px;
+
     border-bottom: 1px solid transparent;
   }
   
@@ -148,8 +146,8 @@
   }
   
   .event {
-    background: #00B4FC;
-    color: white;
+    background: #d6b8aeff;
+    color: #4c3d36ff;
     border-radius: 2px;
     text-align: left;
     font-size: 0.875rem;
@@ -162,7 +160,8 @@
   
   .event:hover {
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
-    background: #00B4FC;
+    background: #4c3d36ff;
+    color: white
   }
   .event.single {
     height: 100%;
