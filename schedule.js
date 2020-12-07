@@ -34,6 +34,7 @@ function initObjects() {
         });
     }
     render();
+
 }
 
 
@@ -156,78 +157,80 @@ function createSummary() {
             exerciseTime: 0,
             leisureTime: 0,
             studyTime: 0
-        })
+        });
     }
+
     for (let i = 0; i < 5; i++) {
         for (let j = 0; j < data.length; j++) {
+            convTime = convertTime(data[j].duration);
             if (i == 0 && data[j].day == "mon") {
-                if (data[j].type == "Class") {
-                    day[i].classTime = day[i].classTime + data[j].duration
+                if (data[j].type == "class") {
+                    day[i].classTime = day[i].classTime + convTime;
                 }
-                else if (data[j].type == "Exercise") {
-                    day[i].exerciseTime = day[i].exerciseTime + data[j].duration
+                else if (data[j].type == "exercise") {
+                    day[i].exerciseTime = day[i].exerciseTime + convTime;
                 }
-                else if (data[j].type == "Leisure") {
-                    day[i].leisureTime = day[i].leisureTime + data[j].duration
+                else if (data[j].type == "leisure") {
+                    day[i].leisureTime = day[i].leisureTime + convTime;
                 }
-                else if (data[j].type == "Study") {
-                    day[i].studyTime = day[i].studyTime + data[j].duration
+                else if (data[j].type == "study") {
+                    day[i].studyTime = day[i].studyTime + convTime;
                 }
             }
             if (i == 1 && data[j].day == "tue") {
-                if (data[j].type == "Class") {
-                    day[i].classTime = day[i].classTime + data[j].duration
+                if (data[j].type == "class") {
+                    day[i].classTime = day[i].classTime + convTime;
                 }
-                else if (data[j].type == "Exercise") {
-                    day[i].exerciseTime = day[i].exerciseTime + data[j].duration
+                else if (data[j].type == "exercise") {
+                    day[i].exerciseTime = day[i].exerciseTime + convTime;
                 }
-                else if (data[j].type == "Leisure") {
-                    day[i].leisureTime = day[i].leisureTime + data[j].duration
+                else if (data[j].type == "leisure") {
+                    day[i].leisureTime = day[i].leisureTime + convTime;
                 }
-                else if (data[j].type == "Study") {
-                    day[i].studyTime = day[i].studyTime + data[j].duration
+                else if (data[j].type == "study") {
+                    day[i].studyTime = day[i].studyTime + convTime;
                 }
             }
             if (i == 2 && data[j].day == "wed") {
-                if (data[j].type == "Class") {
-                    day[i].classTime = day[i].classTime + data[j].duration
+                if (data[j].type == "class") {
+                    day[i].classTime = day[i].classTime + convTime;
                 }
-                else if (data[j].type == "Exercise") {
-                    day[i].exerciseTime = day[i].exerciseTime + data[j].duration
+                else if (data[j].type == "exercise") {
+                    day[i].exerciseTime = day[i].exerciseTime + convTime;
                 }
-                else if (data[j].type == "Leisure") {
-                    day[i].leisureTime = day[i].leisureTime + data[j].duration
+                else if (data[j].type == "leisure") {
+                    day[i].leisureTime = day[i].leisureTime + convTime;
                 }
-                else if (data[j].type == "Study") {
-                    day[i].studyTime = day[i].studyTime + data[j].duration
+                else if (data[j].type == "study") {
+                    day[i].studyTime = day[i].studyTime + convTime;
                 }
             }
             if (i == 3 && data[j].day == "thu") {
-                if (data[j].type == "Class") {
-                    day[i].classTime = day[i].classTime + data[j].duration
+                if (data[j].type == "class") {
+                    day[i].classTime = day[i].classTime + convTime;
                 }
-                else if (data[j].type == "Exercise") {
-                    day[i].exerciseTime = day[i].exerciseTime + data[j].duration
+                else if (data[j].type == "exercise") {
+                    day[i].exerciseTime = day[i].exerciseTime + convTime;
                 }
-                else if (data[j].type == "Leisure") {
-                    day[i].leisureTime = day[i].leisureTime + data[j].duration
+                else if (data[j].type == "leisure") {
+                    day[i].leisureTime = day[i].leisureTime + convTime;
                 }
-                else if (data[j].type == "Study") {
-                    day[i].studyTime = day[i].studyTime + data[j].duration
+                else if (data[j].type == "study") {
+                    day[i].studyTime = day[i].studyTime + convTime;
                 }
             }
             if (i == 4 && data[j].day == "fri") {
-                if (data[j].type == "Class") {
-                    day[i].classTime = day[i].classTime + data[j].duration
+                if (data[j].type == "class") {
+                    day[i].classTime = day[i].classTime + convTime;
                 }
-                else if (data[j].type == "Exercise") {
-                    day[i].exerciseTime = day[i].exerciseTime + data[j].duration
+                else if (data[j].type == "exercise") {
+                    day[i].exerciseTime = day[i].exerciseTime + convTime;
                 }
-                else if (data[j].type == "Leisure") {
-                    day[i].leisureTime = day[i].leisureTime + data[j].duration
+                else if (data[j].type == "leisure") {
+                    day[i].leisureTime = day[i].leisureTime + convTime;
                 }
-                else if (data[j].type == "Study") {
-                    day[i].studyTime = day[i].studyTime + data[j].duration
+                else if (data[j].type == "study") {
+                    day[i].studyTime = day[i].studyTime + convTime;
                 }
             }
 
@@ -237,20 +240,29 @@ function createSummary() {
     }
 
 
-    let getClassTime = document.getElementsByClassName("");
-    let getExerciseTime = document.getElementsByClassName("");
-    let getLeisureime = document.getElementsByClassName("");
-    let getStudyTime = document.getElementsByClassName("");
-
+    let getClassTime = document.getElementsByClassName("classTime");
+    let getExerciseTime = document.getElementsByClassName("exerciseTime");
+    let getLeisureime = document.getElementsByClassName("leisureTime");
+    let getStudyTime = document.getElementsByClassName("studyTime");
+    
     for (let i = 0; i < 5; i++) {
-        getClassTime[i].innerHTML = day[i].classTime;
-        getExerciseTime[i].innerHTML = day[i].exerciseTime;
-        getLeisureime[i].innerHTML = day[i].leisureTime;
-        getStudyTime[i].innerHTML = day[i].studyTime;
+        getClassTime[i].innerHTML = "Class: " + day[i].classTime + " h";
+        getExerciseTime[i].innerHTML = "Exercise: " + day[i].exerciseTime+ " h";
+        getLeisureime[i].innerHTML = "Leisure: " + day[i].leisureTime+ " h";
+        getStudyTime[i].innerHTML = "Study: " + day[i].studyTime+ " h";
     }
-    render();
 }
-
+function convertTime(n){
+    let temp = 0;
+    if (n == 100) { temp = 0.25}
+    else if (n == 200) { temp = 0.5 }
+    else if (n == 320) { temp = 0.75 }
+    else if (n == 440) { temp = 1 }
+    else if (n == 550) { temp = 1.25 }
+    else if (n == 660) { temp = 1.5 }
+    else if (n == 770) { temp = 1.75 }
+    else if (n == 880) { temp = 2 }
+    return temp;}
 
 //Renders data into objects
 function render() {
@@ -266,9 +278,14 @@ function render() {
             else if (data[i].duration == 660) { slots[i].firstChild.classList.add("quint"); }
             else if (data[i].duration == 770) { slots[i].firstChild.classList.add("hex"); }
             else if (data[i].duration == 880) { slots[i].firstChild.classList.add("oct"); }
+            
+            if (data[i].type = "class"){slots[i].classList.add("classColour")}
+            else if (data[i].type = "exercise"){slots[i].classList.add("exerciseColour")}
+            else if (data[i].type = "leisure"){slots[i].classList.add("leisureColour")}
+            else if (data[i].type = "study"){slots[i].classList.add("studyColour")}
         }
     }
-
+    createSummary();
 
 }
 
