@@ -163,33 +163,7 @@
     background: #4c3d36ff;
     color: white
   }
-  .event.single {
-    height: 100%;
-  }
-  .event.double {
-    height: 200%;
-  }
-  .event.triple {
-    height: 320%;
-  }
-  .event.quad {
-    height: 440%;
-  }
-  .event.quint {
-    height: 550%;
-  }
 
-  .event.hex {
-    height: 660%;
-  }
-
-  .event.sept {
-    height: 770%;
-  }
-
-  .event.oct {
-    height: 880%;
-  }
   /**
   thead {
       tr {
@@ -262,4 +236,56 @@
   
   .icon:hover {
     color: red;
+
+  }
+
+  .classColour {
+      background: #780116;
+      color: white;
+  }
+
+  .exerciseColour {
+    background: #f58549;
+    color: white;
+  }
+
+  .leisureColour {
+      background: #b36a5e;
+      color: white;
+
+
+  }
+  .studyColour {
+      background: #c89f9c;
+      color: #4c3d36ff;
+  }
+
+
+
+  .event.single {
+    height: 100%;
+  }
+  .event.double {
+    height: 200%;
+  }
+  .event.triple {
+    height: 320%;
+  }
+  .event.quad {
+    height: 440%;
+  }
+  .event.quint {
+    height: 550%;
+  }
+
+  .event.hex {
+    height: 660%;
+  }
+
+  .event.sept {
+    height: 770%;
+  }
+
+  .event.oct {
+    height: 880%;
   }
