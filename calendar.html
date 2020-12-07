@@ -14,7 +14,7 @@
   </head>
   <body> 
     <div id="navbar">
-        <nav class="navbar navbar-expand-lg navbar-dark container id="navbar">
+        <nav class="navbar navbar-expand-lg navbar-dark container" id="navbar">
             <div class="container">
                 <a class="navbar-brand" id="navTitle" href="index.html">You Got This!</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -179,19 +179,59 @@
       
         
         <table>
-        <thead>
-          <tr>
-            <th class="headcol"></th>
-            <th class="secondary">Sun</th>
-            <th class="secondary">Mon</th>
-            <th class="secondary">Tue</th>
-            <th class="today">Wed</th>
-            <th class="secondary">Thu</th>
-            <th class="secondary">Fri</th>
-            <th class="secondary">Sat</th>
-
-          </tr>
-        </thead>
+            <thead>
+                <tr>
+                    <th class="headcol"></th>
+                    <th class="secondary">Sun</th>
+                    <th class="secondary">Mon</th>
+                    <th class="secondary">Tue</th>
+                    <th class="today">Wed</th>
+                    <th class="secondary">Thu</th>
+                    <th class="secondary">Fri</th>
+                    <th class="secondary">Sat</th>
+                </tr>
+                <tr>
+                    <td class="headcol"></td>
+                    <td id="sun"></td>
+                    <td id="monClass" class="total"></td>
+                    <td id="tueClass" class="total"></td>
+                    <td id="wedClass" class="total"></td>
+                    <td id="thuClass" class="total"></td>
+                    <td id="friClass" class="total"></td>
+                    <td id="sat"></td>
+                  </tr>
+                  <tr>
+                    <td class="headcol"></td>
+                    <td id="sun"></td>
+                    <td id="monExercise" class="total"></td>
+                    <td id="tueExercise" class="total"></td>
+                    <td id="wedExercise" class="total"></td>
+                    <td id="thuExercise" class="total"></td>
+                    <td id="friExercise" class="total"></td>
+                    <td id="sat"></td>
+                  </tr>
+                  <tr>
+                    <td class="headcol"></td>
+                    <td id="sun"></td>
+                    <td id="monLeisure" class="total"></td>
+                    <td id="tueLeisure" class="total"></td>
+                    <td id="wedLeisure" class="total"></td>
+                    <td id="thuLeisure" class="total"></td>
+                    <td id="friLeisure" class="total"></td>
+                    <td id="sat"></td>
+                  </tr>
+                  <tr>
+                    <td class="headcol"></td>
+                    <td id="sun"></td>
+                    <td id="monStudy" class="total"></td>
+                    <td id="tueStudy" class="total"></td>
+                    <td id="wedStudy" class="total"></td>
+                    <td id="thuStudy" class="total"></td>
+                    <td id="friStudy" class="total"></td>
+                    <td id="sat"></td>
+                  </tr>
+            </thead>
+            
         </table>
       
       <div class="wrap"> 
@@ -200,7 +240,8 @@
       <!-- now: adds a red line above the td -->
         <tbody>
           <tr>
-            <td class="headcol" style="background: linear-gradient(0deg, #e0d3cdff 70%, white 50%)"></td>
+              <!-- style="background: linear-gradient(0deg, #e0d3cdff 70%, white 50%)" -->
+            <td class="headcol"></td>
             <td class="sun"></td>
             <td class="mon"></td>
             <td class="tue past"></td>
@@ -774,10 +815,10 @@
       </div>
       </div>
       
-      <script src="schedule.js"></script>
+    <!-- <script src="schedule.js"></script> -->
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="schedule.js"></script>
+    <script type="text/javascript" src="arjun.js"></script>
   </body>
 </html>
