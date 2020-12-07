@@ -141,7 +141,7 @@ function updateButton() {
             data[i].active = true;
 
         }
-       
+
 
     }
     render();
@@ -272,9 +272,17 @@ function createSummary() {
 function render() {
     for (let i = 0; i < data.length; i++) {
         if (data[i].active == true) {
-            slots[i].innerHTML = '<div class="event triple"><input id="check" type="checkbox" class="checkbox" /><label for="check"></label>' +
-                data[i].name + ' ' + data[i].time + ' ' + data[i].desc +  '</div>'
-
+            slots[i].innerHTML = '<div class="event"><input id="check" type="checkbox" class="checkbox" /><label for="check"></label>' +
+                data[i].name + ' ' + data[i].time + ' ' + data[i].desc + '</div>';
+                console.log(data[i].duration);
+            if (data[i].duration == 100) { slots[i].classList.add(""); }
+            else if (data[i].duration == 200) { slots[i].classList.add("single"); }
+            else if (data[i].duration == 320) { slots[i].classList.add("double"); }
+            else if (data[i].duration == 440) { slots[i].classList.add("triple"); }
+            else if (data[i].duration == 550) { slots[i].classList.add("quad"); }
+            else if (data[i].duration == 660) { slots[i].classList.add("quint"); }
+            else if (data[i].duration == 770) { slots[i].classList.add("hex"); }
+            else if (data[i].duration == 880) { slots[i].classList.add("oct"); }
         }
     }
 
