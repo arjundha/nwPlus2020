@@ -125,13 +125,6 @@ function updateButton() {
     let getDesc = document.getElementById("desc").value;
     let getType = document.getElementById("type").value;
 
-    console.log(getName)
-    console.log(getDay)
-    console.log(getTime)
-    console.log(getDuration)
-    console.log(getDesc)
-    console.log(getType)
-
     for (let i = 0; i < data.length; i++) {
         if (data[i].day == getDay && data[i].time == getTime) {
             data[i].name = getName;
@@ -139,20 +132,11 @@ function updateButton() {
             data[i].desc = getDesc;
             data[i].type = getType;
             data[i].active = true;
-
         }
 
 
     }
     render();
-    /*
-        data[i].name = uName;
-        data[i].day = uDay;
-        data[i].time = uTime;
-        data[i].duration = uDuration;
-        data[i].desc = uDesc;
-        data[i].type = uType;
-        render();*/
 }
 
 function switchTimezone(t) {
@@ -273,16 +257,15 @@ function render() {
     for (let i = 0; i < data.length; i++) {
         if (data[i].active == true) {
             slots[i].innerHTML = '<div class="event"><input id="check" type="checkbox" class="checkbox" /><label for="check"></label>' +
-                data[i].name + ' ' + data[i].time + ' ' + data[i].desc + '</div>';
-                console.log(data[i].duration);
+                '<h5>'+ data[i].name + '</h5>' + '<h6>' + data[i].time + '</h6>' + data[i].desc + '</div>';
             if (data[i].duration == 100) { slots[i].classList.add(""); }
-            else if (data[i].duration == 200) { slots[i].classList.add("single"); }
-            else if (data[i].duration == 320) { slots[i].classList.add("double"); }
-            else if (data[i].duration == 440) { slots[i].classList.add("triple"); }
-            else if (data[i].duration == 550) { slots[i].classList.add("quad"); }
-            else if (data[i].duration == 660) { slots[i].classList.add("quint"); }
-            else if (data[i].duration == 770) { slots[i].classList.add("hex"); }
-            else if (data[i].duration == 880) { slots[i].classList.add("oct"); }
+            else if (data[i].duration == 200) { slots[i].firstChild.classList.add("single"); }
+            else if (data[i].duration == 320) { slots[i].firstChild.classList.add("double"); }
+            else if (data[i].duration == 440) { slots[i].firstChild.classList.add("triple"); }
+            else if (data[i].duration == 550) { slots[i].firstChild.classList.add("quad"); }
+            else if (data[i].duration == 660) { slots[i].firstChild.classList.add("quint"); }
+            else if (data[i].duration == 770) { slots[i].firstChild.classList.add("hex"); }
+            else if (data[i].duration == 880) { slots[i].firstChild.classList.add("oct"); }
         }
     }
 
