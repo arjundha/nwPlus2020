@@ -142,9 +142,16 @@ function updateButton() {
 
 function switchTimezone(t) {
     for (let i = 0; i < data.length; i++) {
-        data[i].hour = data[i].hour + t;
+
+        data[i].time = toString(Number(data[i].time) + t*100);
     }
-    //Need to update fixed labels, rename and hide/add?
+    let hours = document.getElementsByClassName("hourrow");
+    for (let i = 0; i < hours.length; i++) {
+        let curr = Number(hours[i].value.slice(0,2));
+        let newcurr = curr + t;
+        let rest = hours[i].value.slice(2);
+        hours[i].innerHTML = toString(newcurr) + rest;
+    }
     render();
 }
 
@@ -244,17 +251,17 @@ function createSummary() {
     let getExerciseTime = document.getElementsByClassName("exerciseTime");
     let getLeisureime = document.getElementsByClassName("leisureTime");
     let getStudyTime = document.getElementsByClassName("studyTime");
-    
+
     for (let i = 0; i < 5; i++) {
         getClassTime[i].innerHTML = "Class: " + day[i].classTime + " h";
-        getExerciseTime[i].innerHTML = "Exercise: " + day[i].exerciseTime+ " h";
-        getLeisureime[i].innerHTML = "Leisure: " + day[i].leisureTime+ " h";
-        getStudyTime[i].innerHTML = "Study: " + day[i].studyTime+ " h";
+        getExerciseTime[i].innerHTML = "Exercise: " + day[i].exerciseTime + " h";
+        getLeisureime[i].innerHTML = "Leisure: " + day[i].leisureTime + " h";
+        getStudyTime[i].innerHTML = "Study: " + day[i].studyTime + " h";
     }
 }
-function convertTime(n){
+function convertTime(n) {
     let temp = 0;
-    if (n == 100) { temp = 0.25}
+    if (n == 100) { temp = 0.25 }
     else if (n == 200) { temp = 0.5 }
     else if (n == 320) { temp = 0.75 }
     else if (n == 440) { temp = 1 }
@@ -262,14 +269,15 @@ function convertTime(n){
     else if (n == 660) { temp = 1.5 }
     else if (n == 770) { temp = 1.75 }
     else if (n == 880) { temp = 2 }
-    return temp;}
+    return temp;
+}
 
 //Renders data into objects
 function render() {
     for (let i = 0; i < data.length; i++) {
         if (data[i].active == true) {
             slots[i].innerHTML = '<div class="event"><input id="check" type="checkbox" class="checkbox" /><label for="check"></label>' +
-                '<h5>'+ data[i].name + '</h5>' + '<h6>' + data[i].time + '</h6>' + data[i].desc + '</div>';
+                '<h5>' + data[i].name + '</h5>' + '<h6>' + data[i].time + '</h6>' + data[i].desc + '</div>';
             if (data[i].duration == 100) { slots[i].classList.add(""); }
             else if (data[i].duration == 200) { slots[i].firstChild.classList.add("single"); }
             else if (data[i].duration == 320) { slots[i].firstChild.classList.add("double"); }
@@ -278,11 +286,11 @@ function render() {
             else if (data[i].duration == 660) { slots[i].firstChild.classList.add("quint"); }
             else if (data[i].duration == 770) { slots[i].firstChild.classList.add("hex"); }
             else if (data[i].duration == 880) { slots[i].firstChild.classList.add("oct"); }
-            
-            if (data[i].type = "class"){slots[i].classList.add("classColour")}
-            else if (data[i].type = "exercise"){slots[i].classList.add("exerciseColour")}
-            else if (data[i].type = "leisure"){slots[i].classList.add("leisureColour")}
-            else if (data[i].type = "study"){slots[i].classList.add("studyColour")}
+
+            if (data[i].type = "class") { slots[i].classList.add("classColour") }
+            else if (data[i].type = "exercise") { slots[i].classList.add("exerciseColour") }
+            else if (data[i].type = "leisure") { slots[i].classList.add("leisureColour") }
+            else if (data[i].type = "study") { slots[i].classList.add("studyColour") }
         }
     }
     createSummary();
