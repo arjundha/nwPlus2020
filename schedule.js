@@ -142,15 +142,21 @@ function updateButton() {
 
 function switchTimezone(t) {
     for (let i = 0; i < data.length; i++) {
-
-        data[i].time = toString(Number(data[i].time) + t*100);
+        let curr = Number(data[i].time.slice(0, 2)) + t;
+        let rest = data[i].time.slice(2);
+        console.log(rest)
+        data[i].time = curr.toString() + ":" + rest;
     }
+
     let hours = document.getElementsByClassName("hourrow");
     for (let i = 0; i < hours.length; i++) {
-        let curr = Number(hours[i].value.slice(0,2));
+        let curr = Number(hours[i].textContent.slice(0, 2));
+
         let newcurr = curr + t;
-        let rest = hours[i].value.slice(2);
-        hours[i].innerHTML = toString(newcurr) + rest;
+
+        let rest = hours[i].textContent.slice(2);
+
+        hours[i].innerHTML = newcurr.toString() + rest;
     }
     render();
 }
