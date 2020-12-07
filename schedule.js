@@ -142,15 +142,20 @@ function updateButton() {
 
 function switchTimezone(t) {
     for (let i = 0; i < data.length; i++) {
-
-        data[i].time = toString(Number(data[i].time) + t*100);
+        let curr = Number(data[i].time.slice(0, 2)) + t;
+        let rest = data[i].time.slice(2);
+        data[i].time = curr.toString() + rest;
     }
+
     let hours = document.getElementsByClassName("hourrow");
     for (let i = 0; i < hours.length; i++) {
-        let curr = Number(hours[i].value.slice(0,2));
+        let curr = Number(hours[i].textContent.slice(0, 2));
+
         let newcurr = curr + t;
-        let rest = hours[i].value.slice(2);
-        hours[i].innerHTML = toString(newcurr) + rest;
+
+        let rest = hours[i].textContent.slice(2);
+
+        hours[i].innerHTML = newcurr.toString() + rest;
     }
     render();
 }
@@ -277,7 +282,7 @@ function render() {
     for (let i = 0; i < data.length; i++) {
         if (data[i].active == true) {
             slots[i].innerHTML = '<div class="event"><input id="check" type="checkbox" class="checkbox" /><label for="check"></label>' +
-                '<h5>' + data[i].name + '</h5>' + '<h6>' + data[i].time + '</h6>' + data[i].desc + '</div>';
+            '<h5>' + data[i].name + '</h5>' + '<h6>' + data[i].time.slice(0,2) + ":"+ data[i].time.slice(2) + '</h6>' + data[i].desc + '</div>';
             if (data[i].duration == 100) { slots[i].classList.add("single"); }
             else if (data[i].duration == 200) { slots[i].firstChild.classList.add("double"); }
             else if (data[i].duration == 320) { slots[i].firstChild.classList.add("triple"); }
@@ -286,12 +291,16 @@ function render() {
             else if (data[i].duration == 660) { slots[i].firstChild.classList.add("hex"); }
             else if (data[i].duration == 770) { slots[i].firstChild.classList.add("sept"); }
             else if (data[i].duration == 880) { slots[i].firstChild.classList.add("oct"); }
+            else if (data[i].duration == 990) { slots[i].firstChild.classList.add("nine"); }
+            else if (data[i].duration == 1100) { slots[i].firstChild.classList.add("ten"); }
+            else if (data[i].duration == 1210) { slots[i].firstChild.classList.add("eleven"); }
+            else if (data[i].duration == 1320) { slots[i].firstChild.classList.add("twelve"); }
             console.log(data[i].type)
 
-            if (data[i].type = "class") { slots[i].firstChild.classList.add("classColour") }
-            else if (data[i].type = "exercise") { slots[i].firstChild.classList.add("exerciseColour") }
-            else if (data[i].type = "leisure") { slots[i].firstChild.classList.add("leisureColour") }
-            else if (data[i].type = "study") { slots[i].firstChild.classList.add("studyColour") }
+            if (data[i].type == "class") { slots[i].firstChild.classList.add("classColour") }
+            else if (data[i].type == "exercise") { slots[i].firstChild.classList.add("exerciseColour") }
+            else if (data[i].type == "leisure") { slots[i].firstChild.classList.add("leisureColour") }
+            else if (data[i].type == "study") { slots[i].firstChild.classList.add("studyColour") }
         }
     }
     createSummary();
