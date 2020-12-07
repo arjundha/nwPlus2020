@@ -30,19 +30,20 @@
             </div>
         </nav>
     </div> 
+    <br>
 
-    <form class="container" onsubmit="return false">
+    <form class="container theform" onsubmit="return false">
         <div class="form-group row">
             <label for="name" class="col-sm-2 col-form-label">Name</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="name" placeholder="Name" name="Name" title="Enter the name of your event" required>
+                <input type="text" class="form-control" id="name" placeholder="Name" name="Name" style="position: relative; top: 5pt;" title="Enter the name of your event" required>
             </div>
         </div>
 
         <div class="form-group row">
             <label for="day" class="col-sm-2 col-form-label">Day:</label>
             <div class="col-sm-10">
-                <select id="day" name="day">
+                <select id="day" name="day" style="position: relative; top: 5pt;">
                     <option value="sun">Sunday</option>
                     <option value="mon">Monday</option>
                     <option value="tue">Tuesday</option>
@@ -57,7 +58,7 @@
         <div class="form-group row">
             <label for="start" class="col-sm-2 col-form-label">Start:</label>
             <div class="col-sm-10">
-                <select id="start" name="start" required>
+                <select id="start" name="start" style="position: relative; top: 5pt;" required>
                     <option value="0800">08:00</option>
                     <option value="0815">08:15</option>
                     <option value="0830">08:30</option>
@@ -120,9 +121,9 @@
     
         <!-- Enter phone number??? -->
         <div class="form-group row">
-            <label for="duration" class="col-sm-2 col-form-label">Duration:</label>
+            <label for="duration" class="col-sm-2 col-form-label" >Duration:</label>
             <div class="col-sm-10">
-                <select id="duration" name="duration" required>
+                <select id="duration" name="duration" style="position: relative; top: 5pt;" required>
                     <option value="100">15 Minutes</option>
                     <option value="200">30 Minutes</option>
                     <option value="320">45 Minutes</option>
@@ -150,7 +151,7 @@
 
         <div class="form-group row">
             <label for="type" class="col-sm-2 col-form-label">Type:</label>
-            <select id="type" name="type" required>
+            <select id="type" name="type" style="position: relative; top: 5pt;" required>
                 <option value="class">Class</option>
                 <option value="study">Study</option>
                 <option value="leisure">Leisure</option>
@@ -159,8 +160,8 @@
         </div>
 
         <div>
-            <button id="submitBtn" type="submit" class="btn btn-dark float-right" onclick="updateButton()">Submit</button>
-            <small id="error_msg" class="form-text text-danger"></small>
+            <button id="submitBtn" type="submit" class="btn btn-dark float-right" onclick="updateButton()" style="position: relative; top: -20pt; background: #4c3d36ff;">Submit</button>
+
         </div>
         <br>
     </form>
@@ -170,10 +171,16 @@
         <header class="container">
             <div class="calendar__title" style="display: flex; justify-content: center; align-items: center">
               <!-- <div class="icon secondary chevron_left">‹</div> -->
-              <h1 class="" style="flex: 1;"><span></span><strong>This Week</strong></h1>
+              <h1 class="" style="flex: 1;"><span></span><strong class="darklava">This Week</strong></h1>
               <!-- <div class="icon secondary chevron_left">›</div> -->
             </div> 
             <div style="align-self: flex-start; flex: 0 0 1"></div>
+            <div>
+                <button type="button" class="btn btn-sm timebutton" onclick="switchTimezone(0) ">PST</button>
+                <button type="button" class="btn btn-sm timebutton" onclick="switchTimezone(3) ">EST</button>
+                <button type="button" class="btn btn-sm timebutton">+</button>
+            </div>
+
         </header>
         
         <div class="outer">
@@ -183,13 +190,13 @@
             <thead>
                 <tr>
                     <th class="headcol"></th>
-                    <th class="secondary">Sun</th>
-                    <th class="secondary">Mon</th>
-                    <th class="secondary">Tue</th>
-                    <th class="today">Wed</th>
-                    <th class="secondary">Thu</th>
-                    <th class="secondary">Fri</th>
-                    <th class="secondary">Sat</th>
+                    <th class="darklava">Sun</th>
+                    <th class="darklava">Mon</th>
+                    <th class="darklava">Tue</th>
+                    <th class="darklava">Wed</th>
+                    <th class="darklava">Thu</th>
+                    <th class="darklava">Fri</th>
+                    <th class="darklava">Sat</th>
                 </tr>
                 <tr>
                     <td class="headcol"></td>
